@@ -1,0 +1,10 @@
+---
+- name: A Typical Playbook
+  hosts: all
+  gather_facts: false
+  become: false
+
+  tasks:
+    - name: "One Task"
+
+    - name: "Another Task"
