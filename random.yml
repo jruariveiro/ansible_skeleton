@@ -1,0 +1,18 @@
+---
+- name: A Typical Playbook
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  become: false
+
+  tasks:
+    - name: Generate a Random String
+      random_gen:
+        size: 12
+      register: result
+
+    - set_fact:
+        random_string: "{{ result.msg | hash('md5')  }}"
+        
+    - debug:
+        msg: "{{ random_string }}"
